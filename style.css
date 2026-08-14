@@ -1,0 +1,94 @@
+
+:root{
+  --green:#198754;
+  --green-dark:#145a32;
+  --cream:#f5f0df;
+  --white:#fff;
+  --text:#222;
+  --muted:#6b6b6b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+}
+.navbar{
+  background:var(--green)!important;
+  box-shadow:0 3px 14px rgba(0,0,0,.15);
+}
+.navbar-brand{font-weight:800}
+.navbar .nav-link,.navbar .navbar-brand{
+  color:#fff!important;
+  border-radius:8px;
+  transition:.25s;
+  margin-right:4px;
+}
+.navbar .nav-link:hover,.navbar .navbar-brand:hover{background:var(--green-dark)}
+.page-hero{
+  background:linear-gradient(135deg,var(--green),var(--green-dark));
+  color:#fff;
+  text-align:center;
+  padding:58px 20px;
+}
+.page-hero h1{font-weight:800;font-size:clamp(2rem,5vw,3.3rem);margin:0 0 10px}
+.page-hero p{margin:0 auto;max-width:700px;font-size:1.05rem}
+.section-title{text-align:center;font-weight:800;margin:42px 0 28px}
+.product-card,.location-card,.contact-card{
+  background:#fff;
+  border:0;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 18px rgba(0,0,0,.10);
+  transition:transform .25s,box-shadow .25s;
+  height:100%;
+}
+.product-card:hover,.location-card:hover,.contact-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+.product-img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  background:#fff;
+  display:block;
+}
+.product-body{padding:18px;text-align:center}
+.product-name{font-size:1.05rem;font-weight:700;min-height:50px;margin-bottom:8px}
+.price{font-size:1.25rem;font-weight:800;color:var(--green-dark);margin-bottom:14px}
+.btn-green{
+  background:var(--green);
+  color:#fff!important;
+  border:0;
+  border-radius:25px;
+  padding:9px 20px;
+  transition:.25s;
+}
+.btn-green:hover{background:var(--green-dark);transform:scale(1.04)}
+.info-strip{
+  margin-top:55px;
+  padding:45px 20px;
+  background:#fff;
+}
+.info-box{text-align:center;padding:18px}
+.info-icon{font-size:2.3rem;margin-bottom:8px}
+.location-img{
+  width:100%;height:210px;object-fit:cover;display:block;
+}
+.location-body{padding:20px;text-align:center}
+.location-body p{color:var(--muted)}
+.contact-card{max-width:620px;margin:auto;padding:32px}
+.contact-item{
+  background:#f8f6ec;
+  border-radius:12px;
+  padding:17px;
+  margin:10px 0;
+}
+.contact-icon{font-size:1.5rem;margin-right:8px}
+footer{background:#212529;color:#fff;text-align:center;padding:25px 15px;margin-top:0}
+@media(max-width:576px){
+  .page-hero{padding:45px 15px}
+  .product-img{height:220px}
+}
