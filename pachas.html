@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23198754'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-size='38' font-weight='700' fill='white'%3EE%3C/text%3E%3C/svg%3E">
+<title>Pachas | El Precio Justo</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">🛒 El Precio Justo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="Promociones.html">Promociones</a></li>
+        <li class="nav-item"><a class="nav-link" href="ubicaciones.html">Ubicaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactenos.html">Contáctenos</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="page-hero"><div class="container">
+<h1>Pachas</h1><p>Productos en existencia</p>
+</div></section>
+<main class="container py-4">
+<div class="search-box">
+  <input id="buscador" class="form-control" type="search" placeholder="🔎 Buscar en pachas..." oninput="buscarProductos()">
+</div>
+<div class="category-filter">
+  <button class="filter-btn active" onclick="filtrarTodos(this)">Todos</button>
+  <button class="filter-btn" onclick="ordenarPrecio('menor',this)">Menor precio</button>
+  <button class="filter-btn" onclick="ordenarPrecio('mayor',this)">Mayor precio</button>
+</div>
+<div id="contador" class="text-center text-secondary mb-3"></div>
+<div id="productos" class="row g-4"><div class="col-12 col-sm-6 col-lg-4">
+<div class="product-card">
+<img class="product-img" src="https://promart.vteximg.com.br/arquivos/ids/7628564-1000-1000/image-1435c9c903ec4bd3bfcefd5c216b454b.jpg?v=638358672245130000" alt="Pachas boca estrecha Setx2">
+<div class="product-body">
+<h2 class="product-name">Pachas boca estrecha Setx2</h2>
+<div class="price">Q110.00</div>
+</div></div></div><div class="col-12 col-sm-6 col-lg-4">
+<div class="product-card">
+<img class="product-img" src="https://walmartgt.vtexassets.com/arquivos/ids/894153/biberon-evenflo-zoo-para-bebe-8-oz-7501027513014.webp?v=638960808083200000" alt="Pacha Evenflo">
+<div class="product-body">
+<h2 class="product-name">Pacha Evenflo</h2>
+<div class="price">Q19.00</div>
+</div></div></div><div class="col-12 col-sm-6 col-lg-4">
+<div class="product-card">
+<img class="product-img" src="https://sears.com.gt/wp-content/uploads/imgSears/284193.jpg" alt="Pachas Duo AVENT">
+<div class="product-body">
+<h2 class="product-name">Pachas Duo AVENT</h2>
+<div class="price">Q159.00</div>
+</div></div></div><div class="col-12 col-sm-6 col-lg-4">
+<div class="product-card">
+<img class="product-img" src="https://glambabiesgt.com/cdn/shop/files/4on-rosa.jpg?v=1716243548" alt="Duo de pachas 4onz Options+Cuello Delgado">
+<div class="product-body">
+<h2 class="product-name">Duo de pachas 4onz Options+Cuello Delgado</h2>
+<div class="price">Q130.00</div>
+</div></div></div><div class="col-12 col-sm-6 col-lg-4">
+<div class="product-card">
+<img class="product-img" src="https://siman.vtexassets.com/arquivos/ids/7820200-800-auto?v=639069593517870000&width=800&height=auto&aspect=true" alt="Pachas anticolicos AVENT Setx3">
+<div class="product-body">
+<h2 class="product-name">Pachas anticolicos AVENT Setx3</h2>
+<div class="price">Q305.10</div>
+</div></div></div><div class="col-12 col-sm-6 col-lg-4">
+<div class="product-card">
+<img class="product-img" src="https://walmartgt.vtexassets.com/arquivos/ids/895834/biberon-evenflo-acuario-para-bebe-8-oz-7501027514103.webp?v=638962401028800000" alt="Pacha evenflo">
+<div class="product-body">
+<h2 class="product-name">Pacha evenflo</h2>
+<div class="price">Q20.00</div>
+</div></div></div><div class="col-12 col-sm-6 col-lg-4">
+<div class="product-card">
+<img class="product-img" src="https://sears.com.gt/wp-content/uploads/imgSears/410109.jpg" alt="Pacha AVENT">
+<div class="product-body">
+<h2 class="product-name">Pacha AVENT</h2>
+<div class="price">Q139.00</div>
+</div></div></div><div class="col-12 col-sm-6 col-lg-4">
+<div class="product-card">
+<img class="product-img" src="https://cdn.kemik.gt/2025/11/7501027511348-1200x1200-1.-500x500.jpg" alt="Evenflo Advanced Pacha Light anticolicos-Duo">
+<div class="product-body">
+<h2 class="product-name">Evenflo Advanced Pacha Light anticolicos-Duo</h2>
+<div class="price">Q75.00</div>
+</div></div></div></div>
+<div id="sinResultados" class="empty-message">
+  <h3>No encontramos ese producto</h3>
+  <p>Prueba con otro nombre.</p>
+</div>
+</main>
+<script>
+function tarjetas(){ return [...document.querySelectorAll("#productos > div")]; }
+function precio(t){
+  const m=t.innerText.match(/Q([0-9,.]+)/);
+  return m ? parseFloat(m[1].replace(/,/g,"")) : 0;
+}
+function actualizar(){
+  const visibles=tarjetas().filter(x=>x.style.display!=="none").length;
+  document.getElementById("contador").textContent=visibles+" producto"+(visibles===1?"":"s")+" encontrado"+(visibles===1?"":"s");
+  document.getElementById("sinResultados").style.display=visibles?"none":"block";
+}
+function buscarProductos(){
+  const q=document.getElementById("buscador").value.toLowerCase().trim();
+  tarjetas().forEach(x=>x.style.display=x.innerText.toLowerCase().includes(q)?"":"none");
+  actualizar();
+}
+function filtrarTodos(btn){
+  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById("buscador").value="";
+  tarjetas().forEach(x=>x.style.display="");
+  actualizar();
+}
+function ordenarPrecio(tipo,btn){
+  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  const cont=document.getElementById("productos");
+  tarjetas().sort((a,b)=>tipo==="menor"?precio(a)-precio(b):precio(b)-precio(a)).forEach(x=>cont.appendChild(x));
+  actualizar();
+}
+actualizar();
+</script>
+</main>
+<footer><p class="mb-1"><strong>El Precio Justo</strong></p><p class="mb-0">Variedad, calidad y buenos precios.</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
