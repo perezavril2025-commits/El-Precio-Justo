@@ -1,155 +1,236 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous">
-  <link rel="icon"
-    type="image/png"
-    href="https://tse1.mm.bing.net/th/id/OIP.CFYf7yZD2IsutxQqgkMzswHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
-  <title>El Precio Justo</title>
-  <style>
-    :root {
-      --bs-secondary-bg: beige;
-    }
-    body {
-      background-color: beige !important;
-      color: #000 !important;
-    }
-    .card-img-top {
-      display: block;
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border: 4px solid #fff;
-      border-radius: 0;
-      margin: 0 auto;
-    }
-    .card {
-      background-color: var(--bs-secondary-bg) !important;
-      border: none !important;
-      box-shadow: none !important;
-      color: #fff !important;
-    }
-    .card .card-body,
-    .card .card-title,
-    .card .card-text,
-    .card a {
-      color: #000 !important;
-      text-align: center;
-    }
-    .navbar .nav-link:hover,
-    .navbar .navbar-brand:hover {
-      color: white;
-      background-color: #145a32;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23198754'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-size='38' font-weight='700' fill='white'%3EE%3C/text%3E%3C/svg%3E">
+<title>Tazas | El Precio Justo</title>
 </head>
-<body style="background-color:rgb(33, 37, 41); color: white;">
-  <nav class="navbar navbar-expand-lg navbar-green bg-success">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        Inicio
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="Promociones.html">
-              Promociones
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ubicaciones.html">
-              Ubicaciones
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contactenos.html">
-              Contáctenos
-            </a>
-          </li>
-        </ul>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      🛒 El Precio Justo
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Promociones.html">Promociones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ubicaciones.html">Ubicaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactenos.html">Contáctenos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <h1>Tazas</h1>
+    <p>Productos en existencia</p>
+  </div>
+</section>
+<main class="container py-4">
+  <div class="search-box">
+    <input
+      id="buscador"
+      class="form-control"
+      type="search"
+      placeholder="🔎 Buscar en tazas..."
+      oninput="buscarProductos()">
+  </div>
+  <div class="category-filter">
+    <button
+      class="filter-btn active"
+      onclick="filtrarTodos(this)">
+      Todos
+    </button>
+    <button
+      class="filter-btn"
+      onclick="ordenarPrecio('menor',this)">
+      Menor precio
+    </button>
+    <button
+      class="filter-btn"
+      onclick="ordenarPrecio('mayor',this)">
+      Mayor precio
+    </button>
+  </div>
+  <div
+    id="contador"
+    class="text-center text-secondary mb-3">
+  </div>
+  <div id="productos" class="row g-4">
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="product-card">
+        <img
+          class="product-img"
+          src="https://thumbs.dreamstime.com/b/taza-de-cer%C3%A1mica-naranja-brillante-423724527.jpg"
+          alt="Taza de ceramica naranja">
+        <div class="product-body">
+          <h2 class="product-name">
+            Taza de ceramica naranja
+          </h2>
+          <div class="price">
+            Q10.00
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-  <h1 style="text-align: center;">
-    Tazas (En Existencia)
-  </h1>
-  <div class="container my-5">
-    <div class="row g-4">
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img
-            src="https://thumbs.dreamstime.com/b/taza-de-cer%C3%A1mica-naranja-brillante-423724527.jpg"
-            class="card-img-top"
-            alt="Taza de ceramica naranja">
-          <div class="card-body">
-            <h5 class="card-title">
-              Taza de ceramica naranja Q10.00
-            </h5>
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="product-card">
+        <img
+          class="product-img"
+          src="https://www.sigo.com.gt/img/p/1/0/6/2/5/10625.jpg"
+          alt="Taza Personalizada">
+        <div class="product-body">
+          <h2 class="product-name">
+            Taza Personalizada
+          </h2>
+          <div class="price">
+            Q25.00
           </div>
         </div>
       </div>
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img
-            src="https://www.sigo.com.gt/img/p/1/0/6/2/5/10625.jpg"
-            class="card-img-top"
-            alt="Taza Personalizada">
-          <div class="card-body">
-            <h5 class="card-title">
-              Taza Personalizada Q25.00
-            </h5>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="product-card">
+        <img
+          class="product-img"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6mcsDqv3ghmZVLTnv7PgOJ84aSORG7gcqJ2WVxr7AEzvmIZ9kCbthLcI&s=10"
+          alt="Taza Blanca">
+        <div class="product-body">
+          <h2 class="product-name">
+            Taza Blanca
+          </h2>
+          <div class="price">
+            Q10.00
           </div>
         </div>
       </div>
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6mcsDqv3ghmZVLTnv7PgOJ84aSORG7gcqJ2WVxr7AEzvmIZ9kCbthLcI&s=10"
-            class="card-img-top"
-            alt="Taza Blanca">
-          <div class="card-body">
-            <h5 class="card-title">
-              Taza Blanca Q10.00
-            </h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img
-            src="https://amsagt.com/wp-content/uploads/2022/02/ZCSAPC7-1.png"
-            class="card-img-top"
-            alt="Taza Cappuccino">
-          <div class="card-body">
-            <h5 class="card-title">
-              Taza Cappuccino 7oz, Negra Q70.00
-            </h5>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="product-card">
+        <img
+          class="product-img"
+          src="https://amsagt.com/wp-content/uploads/2022/02/ZCSAPC7-1.png"
+          alt="Taza Cappuccino 7oz, Negra">
+        <div class="product-body">
+          <h2 class="product-name">
+            Taza Cappuccino 7oz, Negra
+          </h2>
+          <div class="price">
+            Q70.00
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous">
-  </script>
+  <div id="sinResultados" class="empty-message">
+    <h3>
+      No encontramos ese producto
+    </h3>
+    <p>
+      Prueba con otro nombre.
+    </p>
+  </div>
+</main>
+<script>
+function tarjetas(){
+  return [...document.querySelectorAll("#productos > div")];
+}
+function precio(t){
+  const m = t.innerText.match(/Q([0-9,.]+)/);
+  return m
+    ? parseFloat(m[1].replace(/,/g,""))
+    : 0;
+}
+function actualizar(){
+  const visibles =
+    tarjetas().filter(
+      x => x.style.display !== "none"
+    ).length;
+  document.getElementById("contador").textContent =
+    visibles +
+    " producto" +
+    (visibles === 1 ? "" : "s") +
+    " encontrado" +
+    (visibles === 1 ? "" : "s");
+  document.getElementById("sinResultados").style.display =
+    visibles ? "none" : "block";
+}
+function buscarProductos(){
+  const q =
+    document
+      .getElementById("buscador")
+      .value
+      .toLowerCase()
+      .trim();
+  tarjetas().forEach(
+    x =>
+      x.style.display =
+        x.innerText.toLowerCase().includes(q)
+          ? ""
+          : "none"
+  );
+  actualizar();
+}
+function filtrarTodos(btn){
+  document
+    .querySelectorAll(".filter-btn")
+    .forEach(
+      b => b.classList.remove("active")
+    );
+  btn.classList.add("active");
+  document.getElementById("buscador").value = "";
+  tarjetas().forEach(
+    x => x.style.display = ""
+  );
+  actualizar();
+}
+function ordenarPrecio(tipo,btn){
+  document
+    .querySelectorAll(".filter-btn")
+    .forEach(
+      b => b.classList.remove("active")
+    );
+  btn.classList.add("active");
+  const cont =
+    document.getElementById("productos");
+  tarjetas()
+    .sort(
+      (a,b) =>
+        tipo === "menor"
+          ? precio(a) - precio(b)
+          : precio(b) - precio(a)
+    )
+    .forEach(
+      x => cont.appendChild(x)
+    );
+  actualizar();
+}
+actualizar();
+</script>
+<footer>
+  <p class="mb-1">
+    <strong>El Precio Justo</strong>
+  </p>
+  <p class="mb-0">
+    Variedad, calidad y buenos precios.
+  </p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
