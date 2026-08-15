@@ -3,42 +3,192 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23198754'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-size='38' font-weight='700' fill='white'%3EE%3C/text%3E%3C/svg%3E">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://tse1.mm.bing.net/th/id/OIP.CFYf7yZD2IsutxQqgkMzswHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
   <title>Promociones | El Precio Justo</title>
+  <style>
+    body {
+      background-color: beige;
+      color: #000;
+      margin: 0;
+    }
+    .navbar {
+      background-color: #198754 !important;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .navbar .nav-link {
+      color: white !important;
+      margin-left: 5px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .navbar .nav-link:hover {
+      background-color: #145a32;
+    }
+    .navbar .nav-link.active {
+      background-color: #145a32;
+      border-radius: 6px;
+    }
+    .hero {
+      background: linear-gradient(
+        135deg,
+        #198754,
+        #145a32
+      );
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .promo-card {
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      height: 100%;
+      position: relative;
+      box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+    .promo-card:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.20);
+    }
+    .promo-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .promo-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: #dc3545;
+      color: white;
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      z-index: 2;
+    }
+    .promo-body {
+      padding: 22px;
+      text-align: center;
+    }
+    .promo-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #212529;
+    }
+    .promo-text {
+      color: #555;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .old-price {
+      color: #777;
+      text-decoration: line-through;
+      font-size: 0.95rem;
+    }
+    .new-price {
+      color: #198754;
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+    .promo-info {
+      background-color: #198754;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 55px;
+    }
+    .promo-info h2 {
+      font-weight: bold;
+    }
+    footer {
+      background-color: #212529;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .promo-img {
+        height: 210px;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">
+      <a class="navbar-brand" href="index.html">
         🛒 El Precio Justo
       </a>
-      <button class="navbar-toggler" type="button"
+      <button
+        class="navbar-toggler"
+        type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#navbarNav">
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Abrir menú">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a
+              class="nav-link"
+              href="index.html">
               Inicio
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="Promociones.html">
+            <a
+              class="nav-link active"
+              href="Promociones.html">
               Promociones
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ubicaciones.html">
+            <a
+              class="nav-link"
+              href="ubicaciones.html">
               Ubicaciones
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contactenos.html">
+            <a
+              class="nav-link"
+              href="contactenos.html">
               Contáctenos
             </a>
           </li>
@@ -46,496 +196,290 @@
       </div>
     </div>
   </nav>
-  <section class="page-hero">
+  <section class="hero">
     <div class="container">
-      <h1>🔥 Promociones</h1>
+      <h1>
+        🔥 Promociones de Agosto
+      </h1>
       <p>
         Aprovecha nuestras ofertas especiales
-        en productos seleccionados.
+        por tiempo limitado.
       </p>
     </div>
   </section>
-  <main class="container py-5">
-    <div class="search-box">
-      <input
-        id="buscadorPromo"
-        class="form-control"
-        type="search"
-        placeholder="🔎 Buscar una promoción..."
-        oninput="actualizarPromociones()">
-    </div>
-    <div class="category-filter">
-      <button
-        class="filter-btn active"
-        onclick="filtrarCategoria('Todos', this)">
-        Todos
-      </button>
-      <button
-        class="filter-btn"
-        onclick="filtrarCategoria('Pachas', this)">
-        🍼 Pachas
-      </button>
-      <button
-        class="filter-btn"
-        onclick="filtrarCategoria('Juguetes', this)">
-        🧸 Juguetes
-      </button>
-      <button
-        class="filter-btn"
-        onclick="filtrarCategoria('Electrónicos', this)">
-        💻 Electrónicos
-      </button>
-      <button
-        class="filter-btn"
-        onclick="filtrarCategoria('Arreglos', this)">
-        💐 Arreglos
-      </button>
-      <button
-        class="filter-btn"
-        onclick="filtrarCategoria('Tazas', this)">
-        ☕ Tazas
-      </button>
-      <button
-        class="filter-btn"
-        onclick="filtrarCategoria('Peluches', this)">
-        🧸 Peluches
-      </button>
-    </div>
-    <div
-      id="contador"
-      class="text-center text-secondary mb-4">
-    </div>
-    <div id="promociones" class="row g-4">
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Pachas">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
+  <main class="container pb-5">
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 OFERTA
           </span>
           <img
-            class="product-img"
-            src="https://walmartgt.vtexassets.com/arquivos/ids/894153/biberon-evenflo-zoo-para-bebe-8-oz-7501027513014.webp?v=638960808083200000"
-            alt="Pacha Evenflo">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Pachas
-            </div>
-            <h2 class="product-name">
-              Pacha Evenflo
+            src="https://img.nihaojewelry.com/fit-in/800x800/product/2023/6/13/1668559462195138560/Solid-Color-Basic-Nylon-Functional-Backpack-For-Women-With-Polyester-Lining-School-Backpack-Style-0.jpg"
+            class="promo-img"
+            alt="Mochilas escolares">
+          <div class="promo-body">
+            <h2 class="promo-title">
+              Mochilas escolares
             </h2>
-            <div>
-              <span class="old-price">
-                Q25.00
-              </span>
-              <span class="new-price">
-                Q19.00
-              </span>
-            </div>
+            <p class="promo-text">
+              <strong>
+                50% de descuento
+              </strong>
+              <br>
+              en mochilas seleccionadas.
+            </p>
           </div>
         </div>
       </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Pachas">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 OFERTA
           </span>
           <img
-            class="product-img"
-            src="https://sears.com.gt/wp-content/uploads/imgSears/410109.jpg"
-            alt="Pacha AVENT">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Pachas
-            </div>
-            <h2 class="product-name">
-              Pacha AVENT
+            src="https://previews.123rf.com/images/agigulf/agigulf1410/agigulf141000022/32643189-very-many-kids-toys.jpg"
+            class="promo-img"
+            alt="Juguetes">
+          <div class="promo-body">
+            <h2 class="promo-title">
+              Promoción en juguetes
             </h2>
-            <div>
-              <span class="old-price">
-                Q160.00
-              </span>
-              <span class="new-price">
-                Q139.00
-              </span>
-            </div>
+            <p class="promo-text">
+              Lleva el
+              <strong>
+                segundo juguete al 50% de descuento.
+              </strong>
+            </p>
           </div>
         </div>
       </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Juguetes">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 OFERTA
           </span>
           <img
-            class="product-img"
-            src="https://sears.com.gt/wp-content/uploads/imgSears/412688.jpg"
-            alt="Juguete educativo musical">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Juguetes
-            </div>
-            <h2 class="product-name">
-              Juguete educativo musical
+            src="https://click.gt/cdn/shop/files/2-large_89aae713-38d3-4660-86fe-77ec138afc19.jpg?v=1724207119&width=1200"
+            class="promo-img"
+            alt="Bocina JBL">
+          <div class="promo-body">
+            <h2 class="promo-title">
+              Bocina JBL
             </h2>
-            <div>
+            <p class="promo-text">
+              Antes:
               <span class="old-price">
-                Q55.00
+                Q1,300.00
               </span>
+              <br>
+              Ahora:
               <span class="new-price">
-                Q41.40
+                Q1,000.00
               </span>
-            </div>
+            </p>
           </div>
         </div>
       </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Juguetes">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 OFERTA
           </span>
           <img
-            class="product-img"
-            src="https://http2.mlstatic.com/D_604601-MLA112290548065_052026-O.jpg"
-            alt="Carro Transformer policía">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Juguetes
-            </div>
-            <h2 class="product-name">
-              Carro Transformer policía
+            src="https://ponchycaprico.com/cdn/shop/files/Arreglo_floral_de_Rosas_Mix_Lisianthus_Pecot_y_Mini_Rosas_en_Caja_-Domo_Rosado.png?v=1760662269"
+            class="promo-img"
+            alt="Arreglo floral de Rosas Mix">
+          <div class="promo-body">
+            <h2 class="promo-title">
+              Arreglo floral de Rosas Mix
             </h2>
-            <div>
+            <p class="promo-text">
+              Antes:
               <span class="old-price">
-                Q65.00
+                Q950.00
               </span>
+              <br>
+              Ahora:
               <span class="new-price">
-                Q50.00
+                Q600.00
               </span>
-            </div>
+            </p>
           </div>
         </div>
       </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Tazas">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 2X1
           </span>
           <img
-            class="product-img"
+            src="https://http2.mlstatic.com/D_Q_NP_2X_789047-MLA109043472555_032026-P.webp"
+            class="promo-img"
+            alt="Pachas de 8 y 10 oz">
+          <div class="promo-body">
+            <h2 class="promo-title">
+              2x1 en pachas
+            </h2>
+            <p class="promo-text">
+              <strong>
+                2x1 en pachas de 8 oz y 10 oz.
+              </strong>
+              <br>
+              Hasta agotar existencias.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 DESCUENTO
+          </span>
+          <img
+            src="https://www.taurus.com.mx/cdn/shop/files/17b792a3-3837-48bd-bc36-bbc42cdef878.jpg?v=1738161401&width=1946"
+            class="promo-img"
+            alt="Ventiladores">
+          <div class="promo-body">
+            <h2 class="promo-title">
+              Promoción en ventiladores
+            </h2>
+            <p class="promo-text">
+              <span class="new-price">
+                Hasta 25% de descuento
+              </span>
+              <br>
+              Solo del
+              <strong>
+                20 al 31 de agosto.
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 OFERTA
+          </span>
+          <img
+            src="https://static.kemikcdn.com/2024/11/71QKrqSjs-L.jpg"
+            class="promo-img"
+            alt="Peluches">
+          <div class="promo-body">
+            <h2 class="promo-title">
+              Peluches seleccionados
+            </h2>
+            <p class="promo-text">
+              <span class="new-price">
+                20% de descuento
+              </span>
+              <br>
+              En peluches seleccionados.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 OFERTA
+          </span>
+          <img
             src="https://thumbs.dreamstime.com/b/taza-de-cer%C3%A1mica-naranja-brillante-423724527.jpg"
-            alt="Taza naranja">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Tazas
-            </div>
-            <h2 class="product-name">
+            class="promo-img"
+            alt="Taza de cerámica naranja">
+          <div class="promo-body">
+            <h2 class="promo-title">
               Taza de cerámica naranja
             </h2>
-            <div>
+            <p class="promo-text">
+              Antes:
               <span class="old-price">
                 Q15.00
               </span>
+              <br>
+              Ahora:
               <span class="new-price">
                 Q10.00
               </span>
-            </div>
+            </p>
           </div>
         </div>
       </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Tazas">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 OFERTA
           </span>
           <img
-            class="product-img"
-            src="https://www.sigo.com.gt/img/p/1/0/6/2/5/10625.jpg"
-            alt="Taza Personalizada">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Tazas
-            </div>
-            <h2 class="product-name">
-              Taza Personalizada
+            src="https://click.gt/cdn/shop/files/2-large_89aae713-38d3-4660-86fe-77ec138afc19.jpg?v=1724207119&width=1200"
+            class="promo-img"
+            alt="Accesorios electrónicos">
+          <div class="promo-body">
+            <h2 class="promo-title">
+              Accesorios electrónicos
             </h2>
-            <div>
-              <span class="old-price">
-                Q30.00
-              </span>
+            <p class="promo-text">
               <span class="new-price">
-                Q25.00
+                15% de descuento
               </span>
-            </div>
+              <br>
+              En productos seleccionados.
+            </p>
           </div>
         </div>
       </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Peluches">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="promo-card">
+          <span class="promo-badge">
+            🔥 OFERTA
           </span>
           <img
-            class="product-img"
-            src="https://static.kemikcdn.com/2024/11/71QKrqSjs-L.jpg"
-            alt="Peluche Capibara">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Peluches
-            </div>
-            <h2 class="product-name">
-              Peluche Capibara con Gorro de Fresa
+            src="https://ponchycaprico.com/cdn/shop/files/Arreglo_floral_de_Rosas_Mix_Lisianthus_Pecot_y_Mini_Rosas_en_Caja_-Domo_Rosado.png?v=1760662269"
+            class="promo-img"
+            alt="Arreglos florales">
+          <div class="promo-body">
+            <h2 class="promo-title">
+              Arreglos florales
             </h2>
-            <div>
-              <span class="old-price">
-                Q130.00
-              </span>
+            <p class="promo-text">
               <span class="new-price">
-                Q100.00
+                10% de descuento
               </span>
-            </div>
+              <br>
+              En arreglos seleccionados.
+            </p>
           </div>
         </div>
       </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Peluches">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
-          </span>
-          <img
-            class="product-img"
-            src="https://walmartgt.vtexassets.com/arquivos/ids/891637/peluche-spark-create-imagine-animales-de-la-granja-surtidos-16-pulgadas-4895213808576.jpg?v=638956221459170000"
-            alt="Peluche de Vaca">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Peluches
-            </div>
-            <h2 class="product-name">
-              Peluche de Vaca
-            </h2>
-            <div>
-              <span class="old-price">
-                Q120.00
-              </span>
-              <span class="new-price">
-                Q100.00
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Arreglos">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
-          </span>
-          <img
-            class="product-img"
-            src="https://arreglosfloralesguatemala.com/cdn/shop/products/e807221a-efc7-4d47-82d2-c13057f02a52_large.jpg?v=1679956447"
-            alt="Arreglo Rosas Rojas">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Arreglos
-            </div>
-            <h2 class="product-name">
-              Arreglo Rosas Rojas
-            </h2>
-            <div>
-              <span class="old-price">
-                Q650.00
-              </span>
-              <span class="new-price">
-                Q595.00
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Arreglos">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
-          </span>
-          <img
-            class="product-img"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQukwl_HeMRB5H6iLpeIFO0pRiD9XyD9LKttvwrVZldgMmLQ5d8xaKroq79&s=10"
-            alt="Arreglo Azul y Blanco">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Arreglos
-            </div>
-            <h2 class="product-name">
-              Arreglo Azul y Blanco
-            </h2>
-            <div>
-              <span class="old-price">
-                Q550.00
-              </span>
-              <span class="new-price">
-                Q490.00
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Electrónicos">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
-          </span>
-          <img
-            class="product-img"
-            src="https://walmartgt.vtexassets.com/arquivos/ids/770477/24152_01.jpg?v=638762159528700000"
-            alt="Ventilador Negro">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Electrónicos
-            </div>
-            <h2 class="product-name">
-              Ventilador Negro
-            </h2>
-            <div>
-              <span class="old-price">
-                Q375.00
-              </span>
-              <span class="new-price">
-                Q335.00
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-12 col-sm-6 col-lg-4 promocion"
-        data-categoria="Electrónicos">
-        <div class="offer-card">
-          <span class="offer-badge">
-             OFERTA
-          </span>
-          <img
-            class="product-img"
-            src="https://elektragt.vtexassets.com/arquivos/ids/190477/9148T0NScxL.jpg?v=638200584602670000"
-            alt="Ventilador de piso">
-          <div class="product-body">
-            <div class="small text-secondary">
-              Electrónicos
-            </div>
-            <h2 class="product-name">
-              Ventilador de piso
-            </h2>
-            <div>
-              <span class="old-price">
-                Q650.00
-              </span>
-              <span class="new-price">
-                Q599.00
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- SIN RESULTADOS -->
-    <div id="sinResultados" class="empty-message">
-      <h3>No encontramos esa promoción 😕</h3>
-      <p>
-        Prueba con otro nombre o categoría.
-      </p>
     </div>
   </main>
-  <section class="info-strip">
-    <div class="container text-center">
-      <h2 class="fw-bold">
-        🛍️ ¿Quieres ver todos los productos?
+  <section class="promo-info">
+    <div class="container">
+      <h2>
+        🛍️ ¡Aprovecha nuestras promociones!
       </h2>
-      <p>
-        Explora nuestras categorías y conoce
-        todo lo que tenemos disponible.
+      <p class="mb-0">
+        Visítanos y encuentra productos de calidad
+        a precios especiales durante agosto.
       </p>
-      <a href="index.html" class="btn btn-green">
-        Ver categorías
-      </a>
     </div>
   </section>
   <footer>
     <p class="mb-1">
-      <strong>El Precio Justo</strong>
+      <strong>
+        El Precio Justo
+      </strong>
     </p>
     <p class="mb-0">
       Variedad, calidad y buenos precios.
     </p>
   </footer>
-  <script>
-    let categoriaActual = "Todos";
-    function actualizarPromociones() {
-      const busqueda =
-        document
-          .getElementById("buscadorPromo")
-          .value
-          .toLowerCase()
-          .trim();
-      const productos =
-        document.querySelectorAll(".promocion");
-      let cantidad = 0;
-      productos.forEach(function(producto) {
-        const categoria =
-          producto.dataset.categoria;
-        const texto =
-          producto.innerText.toLowerCase();
-        const coincideCategoria =
-          categoriaActual === "Todos" ||
-          categoria === categoriaActual;
-        const coincideBusqueda =
-          texto.includes(busqueda);
-        if (coincideCategoria && coincideBusqueda) {
-          producto.style.display = "";
-          cantidad++;
-        } else {
-          producto.style.display = "none";
-        }
-      });
-      document.getElementById("contador").textContent =
-        cantidad +
-        (cantidad === 1
-          ? " promoción disponible"
-          : " promociones disponibles");
-      document.getElementById("sinResultados").style.display =
-        cantidad === 0
-          ? "block"
-          : "none";
-    }
-    function filtrarCategoria(categoria, boton) {
-      categoriaActual = categoria;
-      document
-        .querySelectorAll(".filter-btn")
-        .forEach(function(btn) {
-          btn.classList.remove("active");
-        });
-      boton.classList.add("active");
-      actualizarPromociones();
-    }
-    actualizarPromociones();
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous">
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
